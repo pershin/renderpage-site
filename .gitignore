@@ -1,2 +1,12 @@
 # Config files
 /app/conf/*.php
+
+# Static files
+www/static/
+
+# Composer
+vendor/autoload.php
+vendor/composer/
+
+# Node.js
+node_modules/

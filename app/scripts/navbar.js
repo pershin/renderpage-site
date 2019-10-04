@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2018 Sergey Pershin <sergey dot pershin at hotmail dot com>.
+ * Copyright (c) 2015-2019 Sergey Pershin
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,26 +22,26 @@
  * THE SOFTWARE.
  */
 
-(function (d) {
-  var buttonElement, ulElement;
-  buttonElement = d.querySelector(".navbar > button");
-  ulElement = d.querySelector(".navbar > ul");
+(function (document) {
+    var buttonElement, ulElement;
+    buttonElement = document.querySelector(".navbar > button");
+    ulElement = document.querySelector(".navbar > ul");
 
-  buttonElement.addEventListener("click", (event) => {
-    if (buttonElement.classList.contains("active")) {
-      buttonElement.classList.remove("active");
-      ulElement.classList.remove("mobile-block");
-    } else {
-      buttonElement.classList.add("active");
-      ulElement.classList.add("mobile-block");
-      event.stopPropagation();
-    }
-  });
+    buttonElement.addEventListener("click", function (event) {
+        if (buttonElement.classList.contains("active")) {
+            buttonElement.classList.remove("active");
+            ulElement.classList.remove("mobile-block");
+        } else {
+            buttonElement.classList.add("active");
+            ulElement.classList.add("mobile-block");
+            event.stopPropagation();
+        }
+    });
 
-  d.querySelector("body").addEventListener("click", () => {
-    if (buttonElement.classList.contains("active")) {
-      buttonElement.classList.remove("active");
-      ulElement.classList.remove("mobile-block");
-    }
-  });
+    document.querySelector("body").addEventListener("click", function () {
+        if (buttonElement.classList.contains("active")) {
+            buttonElement.classList.remove("active");
+            ulElement.classList.remove("mobile-block");
+        }
+    });
 })(document);
